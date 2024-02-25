@@ -47,7 +47,7 @@
 
 [Table Relationships in Sequelize](https://levelup.gitconnected.com/table-relationships-in-sequelize-2e2533580c2a)
 
-Code taken from Module 14 Mini-Project: Crowdfunding App
+Code taken from Module 14 Activities: 20-Stu_Middleware and 28-Stu_Mini-Project: Crowdfunding App
 
 ## Contributing
 
