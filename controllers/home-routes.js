@@ -27,9 +27,11 @@ router.get("/", async (req, res) => {
     }
 });
 
-// Route to render blogs
+// Route to render individual blogs
+// Get one blog with serialized data
 router.get('/blog/:id', async (req, res) => {
     try {
+        // Search the database for a blog with an id that matches params
         const blogData = await Blog.findByPk(req.params.id, {
             include: [
                 {
@@ -38,9 +40,9 @@ router.get('/blog/:id', async (req, res) => {
                 },
             ],
         });
-
+        // Use .get({ plain: true }) on the object to serialize it so that it only includes the data needed
         const blog = blogData.get({ plain: true });
-
+        // The 'blog' template is rendered and blog is passed into the template.
         res.render('blog', {
             ...blog,
             logged_in: req.session.logged_in
@@ -60,13 +62,14 @@ router.get('/dashboard', withAuth, async (req, res) => {
             include: [{ model: Blog }],
         });
 
-        const user = userBlog.get({ plain: true });
+        const user = userData.get({ plain: true });
 
         res.render('dashboard', {
             ...user,
             logged_in: true
         });
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });

@@ -37,15 +37,15 @@
 
 ## Credits
 
-[Valedations & Constraints | Sequelize](https://sequelize.org/docs/v6/core-concepts/validations-and-constraints/)
+[Session Management using express-session](https://www.geeksforgeeks.org/session-management-using-express-session-module-in-node-js/)
 
-[Default Values | Sequelize](https://sequelize.org/docs/v6/core-concepts/model-basics/#default-values)
+[Cookie and Session (II)](https://medium.com/@alysachan830/cookie-and-session-ii-how-session-works-in-express-session-7e08d102deb8)
 
-[Associations | Sequelize](https://sequelize.org/docs/v6/core-concepts/assocs/)
+[]()
 
-[Model Querying](https://sequelize.org/docs/v6/core-concepts/model-querying-basics/)
+[]()
 
-[Table Relationships in Sequelize](https://levelup.gitconnected.com/table-relationships-in-sequelize-2e2533580c2a)
+[]()
 
 Code taken from Module 14 Activities: 20-Stu_Middleware and 28-Stu_Mini-Project: Crowdfunding App
 

@@ -18,13 +18,19 @@
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
+        {{!-- handlebars for loop --}}
+        {{!-- Built-in helper to display Dashboard page if logged in --}}
         {{#if logged_in}}
-        <a href="/dashboard">dashboard</a> |
-        <button class="no-button" id="logout">logout</button>
+        <a href="/">Home</a> |
+        <a href="/dashboard">Dashboard</a> |
+        <button class="no-button" id="logout">Logout</button>
         {{else}}
-        <a href="/homepage">home</a> |
-        <a href="/dashboard">dashboard</a> |
-        <a href="/login">login</a>
+        {{!-- Hyper link for Homepage --}}
+        <a href="/">Home</a> |
+        {{!-- Hyperlink for Dashboard page --}}
+        <a href="/dashboard">Dashboard</a> |
+        {{!-- Hyperlink for login page --}}
+        <a href="/login">Login</a>
         {{/if}}
       </nav>
     </header>

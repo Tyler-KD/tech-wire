@@ -1,4 +1,5 @@
 module.exports = {
+    // The helper method 'format_date' will take in a timestamp and return a string with only the date
     format_date: (date) => {
       // Format date as MM/DD/YYYY
       return date.toLocaleDateString();
