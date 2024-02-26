@@ -2,9 +2,9 @@
 const newCommentFormHandler = async (event) => {
     event.preventDefault();
     // Collect values from the Create a New Comment form
-    const content = document.querySelector('#textarea-comment').value.trim();
+    const comment_input = document.querySelector('#textarea-comment').value.trim();
 
-    if (content) {
+    if (comment_input) {
         // Send a POST request to the API endpoint
         const response = await fetch(`/api/comments`, {
             method: 'POST',
@@ -16,7 +16,7 @@ const newCommentFormHandler = async (event) => {
 
         if (response.ok) {
             // If successful, redirect the browser to the dashboard page
-            document.location.replace('/');
+            // document.location.replace('/');
         } else {
             alert('Failed to create comment');
         }
