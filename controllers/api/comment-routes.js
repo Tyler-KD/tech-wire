@@ -10,6 +10,8 @@ router.post('/', async (req, res) => {
         });
             // If the comment is successfully created, the new response will be returned as json
             // 200 status code means the request is successful
+            console.log('comment');
+            console.log(commentData);
             res.status(200).json(commentData);
         
     } catch (err) {

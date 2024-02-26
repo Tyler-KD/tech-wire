@@ -50,6 +50,7 @@ router.get('/blog/:id', async (req, res) => {
         });
         // Use .get({ plain: true }) on the object to serialize it so that it only includes the data needed
         const blog = blogData.get({ plain: true });
+        console.log(blog);
         // The 'blog' template is rendered and blog is passed into the template.
         res.render('blog', {
             ...blog,
