@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blog, User } = require('../models');
+const { Blog, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Route to render homepage
@@ -36,7 +36,11 @@ router.get('/blog/:id', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name'],
+                    attributes: ['username'],
+                },
+                {
+                    model: Comment,
+                    include: [{ model: User, attributes: ['username']}],
                 },
             ],
         });

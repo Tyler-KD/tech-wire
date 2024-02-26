@@ -1,20 +1,20 @@
 <!-- Loop over each object in the blogs array -->
- <!-- For each blog in the array of blog objects, the following <div> will be rendered. -->
+<!-- For each blog in the array of blog objects, the following <div> will be rendered. -->
 {{#each blogs as |blog| }}
 <div class="row mb-4 blog">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <!-- We use blog.id instead of <od> and <li> elements. -->
-      <a href="/blog/{{blog.id}}">{{blog.title}}</a>
-    </h2>
-    <p>Created by {{blog.user.username}} on {{format_date blog.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{blog.content}}
-    </p>
-  </div>
+    <div class="col-md-5">
+        <h2>
+            <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+            {{{get_emoji}}}
+            <!-- We use blog.id instead of <od> and <li> elements. -->
+            <a href="/blog/{{blog.id}}">{{blog.title}}</a>
+        </h2>
+        <p>Created by {{blog.user.username}} on {{format_date blog.date_created}}</p>
+    </div>
+    <div class="col-md-7">
+        <p>
+            {{blog.content}}
+        </p>
+    </div>
 </div>
 {{/each}}

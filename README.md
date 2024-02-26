@@ -41,13 +41,13 @@
 
 [Cookie and Session (II)](https://medium.com/@alysachan830/cookie-and-session-ii-how-session-works-in-express-session-7e08d102deb8)
 
-[]()
+[Built-in Helpers](https://handlebarsjs.com/guide/builtin-helpers.html#if)
+
+[Validations & Constraints | Sequelize](https://sequelize.org/docs/v6/core-concepts/validations-and-constraints/)
 
 []()
 
-[]()
-
-Code taken from Module 14 Activities: 20-Stu_Middleware and 28-Stu_Mini-Project: Crowdfunding App
+Code taken from Module #14 Activities: 20-Stu_Middleware and 28-Stu_Mini-Project: Crowdfunding App
 
 ## Contributing
 
