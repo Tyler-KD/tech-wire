@@ -45,6 +45,18 @@
 
 [Validations & Constraints | Sequelize](https://sequelize.org/docs/v6/core-concepts/validations-and-constraints/)
 
+[textarea: Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)
+
+[Spacing * Bootstrap](https://getbootstrap.com/docs/4.0/utilities/spacing/)
+
+[]()
+
+[]()
+
+[]()
+
+[]()
+
 []()
 
 Code taken from Module #14 Activities: 20-Stu_Middleware and 28-Stu_Mini-Project: Crowdfunding App
