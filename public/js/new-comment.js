@@ -2,7 +2,7 @@
 const newCommentFormHandler = async (event) => {
     event.preventDefault();
     // Collect values from the Create a New Comment form
-    const content = document.querySelector('#comment-desc').value.trim();
+    const content = document.querySelector('#textarea-comment').value.trim();
 
     if (content) {
         // Send a POST request to the API endpoint
