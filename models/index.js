@@ -13,7 +13,7 @@ User.hasMany(Blog, {
 // Blogs belong to Users
 // BelongsTo Association is capable of creating both One-To-One and One-To-Many relationships
 Blog.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
 });
 
 // Blogs have many Comments
@@ -35,7 +35,7 @@ User.hasMany(Comment, {
 
 // Comments belong to Users
 Comment.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
 });
 
 module.exports = { User, Blog, Comment };

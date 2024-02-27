@@ -28,12 +28,12 @@
   </form>
   {{/if}}
   <h2 class="mt-5">Comment History:</h2>
-  {{!-- {{#each comments}} --}}
+  {{#each comments}}
   <div class="comment my-5">
     <p>{{comment_input}}</p>
     <p>By {{user.username}} on {{format_date date_created}}</p>
   </div>
-  {{!-- {{/each}} --}}
+  {{/each}}
 </div>
 
 <script src="/js/new-comment.js"></script>
