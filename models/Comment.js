@@ -21,6 +21,7 @@ Comment.init(
             allowNull: false,
             defaultValue: DataTypes.NOW,
         },
+        // Foreign Key
         user_id: {
             type: DataTypes.INTEGER,
             // references the user model's id
@@ -29,6 +30,7 @@ Comment.init(
                 key: 'id',
             },
         },
+        // Foreign Key
         blog_id: {
             type: DataTypes.INTEGER,
             // references the blog model's id

@@ -1,7 +1,11 @@
 <div class="text-center">
+  {{!-- Title Blog --}}
   <h2>{{title}}</h2>
+  {{!-- get_emoji from helpers --}}
   <p>{{{get_emoji}}}</p>
+  {{!-- Blog content --}}
   <p>{{content}}</p>
+  {{!-- Displays who created the blog and date created --}}
   <p>Created by {{user.username}} on {{format_date date_created}}</p>
   {{!-- Built-in helper to display new comment form if logged in --}}
   {{#if logged_in}}

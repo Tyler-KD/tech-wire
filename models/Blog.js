@@ -26,12 +26,14 @@ Blog.init(
         },
         content: {
             type: DataTypes.STRING,
+            allowNull: false,
         },
         date_created: {
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW,
         },
+        // Foreign Key
         user_id: {
             type: DataTypes.INTEGER,
             // references the user model's id

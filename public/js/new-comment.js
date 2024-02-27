@@ -6,7 +6,7 @@ const newCommentFormHandler = async (event) => {
 
     if (comment_input) {
         // Send a POST request to the API endpoint
-        const response = await fetch(`/api/comments`, {
+        const response = await fetch('/api/comments', {
             method: 'POST',
             body: JSON.stringify({ comment_input }),
             headers: {
