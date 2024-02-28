@@ -5,7 +5,7 @@ const newCommentFormHandler = async (event) => {
     const comment_input = document.querySelector('#textarea-comment').value.trim();
     // To get blog_id, parseINT() converts a string to an integer
     // window.location.pathname returns the path and filename of the current page
-    // .split('/') splits ["http://localhost:3001/blog/1"] into ["http://localhost:3001", "blog", "1"]
+    // .split('/') splits ["http://localhost:3001/blog/1"] into ["http://localhost:3001", "blog", "1"] based on the delimiter (/)
     // .pop() removes the last element from an array and returns it
     const blog_id = parseInt(window.location.pathname.split('/').pop());
 
@@ -19,18 +19,22 @@ const newCommentFormHandler = async (event) => {
                 'Content-Type': 'application/json',
             },
         });
-
-        if (response.ok) {
-            // If successful, reload the page after clicking "Submit:"
+        // If response is successful, reload the page after clicking "Submit:"
+        if (response.status < 400) {
             // Comment History is populated with each comment on page
             document.location.reload();
+        // If response is unsuccessful, navigate back to the login route
         } else {
             alert('Failed to create comment');
+            document.location.replace('/login');
         }
     }
 };
 
 // Event listener for creating a comment for a blog after clicking 'Submit'
+// The optional chaining (?.) operator accesses an object's property or calls a function.
+// If the object accessed or function called using this operator is undefined or null, the expression short circuits
+// and evaluates to undefined instead of throwing an error.
+// When logged out, displaying a blog will not give "TypeError: Cannot read properties of null" since new-comment-form is not rendered.
 document
-    .querySelector('.new-comment-form')
-    .addEventListener('submit', newCommentFormHandler);
+    .querySelector('.new-comment-form')?.addEventListener('submit', newCommentFormHandler);

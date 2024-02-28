@@ -1,8 +1,8 @@
 const router = require('express').Router();
 // Imports Blog and Comment models
 const { Blog, Comment } = require('../../models');
-// Imports withAuth module
-const withAuth = require('../../utils/auth');
+// Imports handleExpiredCookie module
+const handleExpiredCookie = require('../../utils/handleExpiredCookie')
 
 // The `/api/blogs` endpoint
 
@@ -26,9 +26,9 @@ router.get('/', async (req, res) => {
 });
 
 // Route to create/add a blog post using async/await.
-// If user is authenticated, then route is accessed.
-// If user is not authenticated, then redirect the request back to the login route.
-router.post('/', withAuth, async (req, res) => {
+// If user's cookie has not expired, then route is accessed.
+// If user's cookie has expired', then throw 400 Bad Request error, and navigate back to the login route.
+router.post('/', handleExpiredCookie, async (req, res) => {
     try {
         const blogData = await Blog.create({
             ...req.body,

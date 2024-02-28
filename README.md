@@ -49,13 +49,13 @@
 
 [Spacing * Bootstrap](https://getbootstrap.com/docs/4.0/utilities/spacing/)
 
-[]()
+[JS Window Location](https://www.w3schools.com/js/js_window_location.asp)
 
-[]()
+[Location: pathname property](https://developer.mozilla.org/en-US/docs/Web/API/Location/pathname)
 
-[]()
+[JS String split() Method](https://www.w3schools.com/jsref/jsref_split.asp)
 
-[]()
+[Optional chaining (?.) - JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 
 []()
 

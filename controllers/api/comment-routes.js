@@ -1,13 +1,15 @@
 const router = require('express').Router();
 // Imports Comment model
 const { Comment } = require('../../models');
-// Imports withAuth module
-const withAuth = require('../../utils/auth');
+// Imports handleExpiredCookie module
+const handleExpiredCookie = require('../../utils/handleExpiredCookie')
+
+// The `api/comments` endpoint
 
 // Route to create/add a comment using async/await.
-// If user is authenticated, then route is accessed.
-// If user is not authenticated, then redirect the request back to the login route.
-router.post('/', withAuth, async (req, res) => {
+// If user's cookie has not expired, then route is accessed.
+// If user's cookie has expired, then throw 400 Bad Request error, and navigate back to the login route.
+router.post('/', handleExpiredCookie, async (req, res) => {
     try {
         const commentData = await Comment.create({
             ...req.body,

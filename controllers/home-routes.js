@@ -90,6 +90,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 // Route to render login page
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
+    console.log(req.session);
     if (req.session.logged_in) {
         res.redirect('/dashboard');
         return;

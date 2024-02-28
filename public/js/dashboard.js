@@ -14,12 +14,13 @@ const newFormHandler = async (event) => {
                 'Content-Type': 'application/json',
             },
         });
-
-        if (response.ok) {
-            // If successful, redirect the browser to the dashboard page
+        // If response is successful, redirect the browser to the dashboard page after clicking 'Create'
+        if (response.status < 400) {
             document.location.replace('/dashboard');
+        // If response is unsuccessful, navigate back to the login route
         } else {
             alert('Failed to create blog');
+            document.location.replace('/login');
         }
     }
 };
