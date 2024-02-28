@@ -1,5 +1,7 @@
 const router = require('express').Router();
+// Imports Blog, User, and Comment models
 const { Blog, User, Comment } = require('../models');
+// Imports withAuth module
 const withAuth = require('../utils/auth');
 
 // Route to render homepage
@@ -61,8 +63,10 @@ router.get('/blog/:id', async (req, res) => {
     }
 });
 
-// Route to render dashboard and all blogs by user
-// Use withAuth middleware to prevent access to route
+// Route to render dashboard and all blogs by user.
+// Use withAuth middleware to prevent access to route.
+// If user is authenticated, then route is accessed.
+// If user is not authenticated, then redirect request back to the login route.
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
         // Find the logged in user based on the session ID

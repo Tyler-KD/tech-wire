@@ -1,4 +1,5 @@
 const router = require('express').Router();
+// Imports User model
 const { User } = require('../../models');
 
 // route to create/add a user using async/await

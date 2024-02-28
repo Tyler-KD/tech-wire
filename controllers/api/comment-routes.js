@@ -1,8 +1,13 @@
 const router = require('express').Router();
+// Imports Comment model
 const { Comment } = require('../../models');
+// Imports withAuth module
+const withAuth = require('../../utils/auth');
 
-// route to create/add a comment using async/await
-router.post('/', async (req, res) => {
+// Route to create/add a comment using async/await.
+// If user is authenticated, then route is accessed.
+// If user is not authenticated, then redirect the request back to the login route.
+router.post('/', withAuth, async (req, res) => {
     try {
         const commentData = await Comment.create({
             ...req.body,

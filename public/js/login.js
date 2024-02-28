@@ -47,10 +47,11 @@ const signupFormHandler = async (event) => {
     }
 };
 
+// Event listener for logging in after clicking 'login'
 document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
-
+// Event listener for signing up after clicking 'signup'
 document
     .querySelector('.signup-form')
     .addEventListener('submit', signupFormHandler);

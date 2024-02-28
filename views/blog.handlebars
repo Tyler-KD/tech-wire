@@ -1,5 +1,5 @@
 <div class="text-center">
-  {{!-- Title Blog --}}
+  {{!-- Blog title --}}
   <h2>{{title}}</h2>
   {{!-- get_emoji from helpers --}}
   <p>{{{get_emoji}}}</p>
@@ -28,6 +28,8 @@
   </form>
   {{/if}}
   <h2 class="mt-5">Comment History:</h2>
+  {{!-- Loop over each object in the comments array --}}
+  {{!-- For each object in the comments array, the following <div> will be rendered --}}
   {{#each comments}}
   <div class="comment my-5">
     <p>{{comment_input}}</p>

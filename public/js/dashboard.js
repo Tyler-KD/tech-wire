@@ -2,8 +2,8 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
     // Collect values from the Create a New Blog form
-    const title = document.querySelector('#blog-name').value.trim();
-    const content = document.querySelector('#blog-desc').value.trim();
+    const title = document.querySelector('#blog-title').value.trim();
+    const content = document.querySelector('#blog-content').value.trim();
 
     if (title && content) {
         // Send a POST request to the API endpoint
@@ -42,10 +42,11 @@ const delButtonHandler = async (event) => {
     }
 };
 
+// Event listener for creating a user's blog after clicking 'Create'
 document
     .querySelector('.new-blog-form')
     .addEventListener('submit', newFormHandler);
-
+// Event listener for deleting a user's blog after clicking 'DELETE'
 document
     .querySelector('.blog-list')
     .addEventListener('click', delButtonHandler);
