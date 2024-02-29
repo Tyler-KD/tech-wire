@@ -25,12 +25,14 @@ const upFormHandler = async (event) => {
         }
     }
 };
+
 // Handler for deleting a user's blog
 const delButtonHandler = async (event) => {
+    // Collect blog_id from the window
+    const id = window.location.href.split('/')[4];
+
     if (event.target.hasAttribute('data-id')) {
-        const id = event.target.getAttribute('data-id');
         // Send a DELETE request to the API endpoint
-        console.log(id, 'id');
         const response = await fetch(`/api/blogs/${id}`, {
             method: 'DELETE',
         });
@@ -45,7 +47,6 @@ const delButtonHandler = async (event) => {
         }
     }
 };
-
 
 // Event listener for deleting a user's blog after clicking 'DELETE'
 // The optional chaining (?.) operator accesses an object's property or calls a function.

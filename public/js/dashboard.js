@@ -25,33 +25,7 @@ const newFormHandler = async (event) => {
     }
 };
 
-// Handler for deleting a user's blog
-const delButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-        const id = event.target.getAttribute('data-id');
-        // Send a DELETE request to the API endpoint
-        const response = await fetch(`/api/blogs/${id}`, {
-            method: 'DELETE',
-        });
-        // If response is successful, redirect the browser to the dashboard page after clicking 'DELETE'
-        if (response.status < 400) {
-            document.location.replace('/dashboard');
-        // If the response is unsuccessful, navigate back to the login route
-        } else {
-            alert('Failed to delete blog');
-            document.location.replace('/login');
-        }
-    }
-};
-
 // Event listener for creating a user's blog after clicking 'Create'
 document
     .querySelector('.new-blog-form')
     .addEventListener('submit', newFormHandler);
-// Event listener for deleting a user's blog after clicking 'DELETE'
-// The optional chaining (?.) operator accesses an object's property or calls a function.
-// If the object accessed or function called using this operator is undefined or null, the expression short circuits
-// and evaluates to undefined instead of throwing an error.
-// When deleting a blog, "TypeError: Cannot read properties of null" will not display since 'DELETE' button is no longer rendered.
-document
-    .querySelector('.blog-list')?.addEventListener('click', delButtonHandler);

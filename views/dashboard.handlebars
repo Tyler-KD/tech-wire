@@ -26,7 +26,7 @@
             </div>
         </form>
     </div>
-    <!-- Conditionally render blogs with delete buttons -->
+    <!-- Conditionally render Current Blogs for user -->
     {{!-- handlebars for loop --}}
     {{#if blogs.length}}
     <div class="col-md-6 blog-list">
@@ -37,10 +37,6 @@
         <div class="row mb-2">
             <div class="col-md-8">
                 <h4><a href="/blog/{{blog.id}}/edit">{{blog.title}}</a></h4>
-            </div>
-            <div class="col-md-4">
-                {{!-- Delete blog post button --}}
-                <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
             </div>
         </div>
         {{/each}}
