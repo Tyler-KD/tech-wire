@@ -63,7 +63,7 @@ router.get('/blog/:id', async (req, res) => {
     }
 });
 
-// Route to render individual blogs
+// Route to render user's blogs within dashboard
 // Get one blog with serialized data
 router.get('/blog/:id/edit', async (req, res) => {
     try {

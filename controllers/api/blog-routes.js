@@ -77,6 +77,7 @@ router.put('/:id', handleExpiredCookie, async (req, res) => {
 // If user's cookie has not expired, then route is accessed.
 // If user's cookie has expired, then throw 400 Bad Request error, and navigate back to the login route.
 router.delete('/:id', handleExpiredCookie, async (req, res) => {
+    console.log('delete-route');
     try {
         const blogData = await Blog.destroy({
             where: {
@@ -86,7 +87,7 @@ router.delete('/:id', handleExpiredCookie, async (req, res) => {
         });
         // If the blog is successfully deleted, the new response will be returned as json.
         // 200 status code means the request is successful.
-        console.log(blogData);
+        console.log(blogData, 'blogData');
         res.status(200).json(blogData);
     } catch (err) {
         // 400 Bad Request response status code indicates that the server cannot or will not process
