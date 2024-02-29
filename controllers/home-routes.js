@@ -63,6 +63,40 @@ router.get('/blog/:id', async (req, res) => {
     }
 });
 
+// Route to render individual blogs
+// Get one blog with serialized data
+router.get('/blog/:id/edit', async (req, res) => {
+    try {
+        // Search the database for a blog with an id that matches params
+        const blogData = await Blog.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['username'],
+                },
+                {
+                    model: Comment,
+                    include: [
+                        { 
+                            model: User, attributes: ['username'],
+                        },
+                    ],
+                },
+            ],
+        });
+        // Use .get({ plain: true }) on the object to serialize it so that it only includes the data needed
+        const blog = blogData.get({ plain: true });
+        console.log(blog);
+        // The 'blog' template is rendered and blog is passed into the template.
+        res.render('editpost', {
+            ...blog,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 // Route to render dashboard and all blogs by user.
 // Use withAuth middleware to prevent access to route.
 // If user is authenticated, then route is accessed.
