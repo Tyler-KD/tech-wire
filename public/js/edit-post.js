@@ -4,11 +4,12 @@ const upFormHandler = async (event) => {
     // Collect values from the Update a a Blog form
     const title = document.querySelector('#blog-title').value.trim();
     const content = document.querySelector('#blog-content').value.trim();
+    const id = window.location.href.split('/')[4];
 
     if (title && content) {
         // Send an UPDATE request to the API endpoint
-        const response = await fetch(`/api/blogs/`, {
-            method: 'UPDATE',
+        const response = await fetch(`/api/blogs/${id}`, {
+            method: 'PUT',
             body: JSON.stringify({ title, content }),
             headers: {
                 'Content-Type': 'application/json',
@@ -25,7 +26,7 @@ const upFormHandler = async (event) => {
     }
 };
 
-// Event listener for creating a user's blog after clicking 'Create'
+// Event listener for creating a user's blog after clicking 'Update'
 document
     .querySelector('.new-blog-form')
     .addEventListener('submit', upFormHandler);

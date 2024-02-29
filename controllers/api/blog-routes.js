@@ -50,12 +50,17 @@ router.post('/', handleExpiredCookie, async (req, res) => {
 // Route to update a blog post using async/await.
 // If user's cookie has not expired, then route is accessed.
 // If user's cookie has expired, then throw 400 Bad Request error, and navigate back to the login route.
-router.put('/', handleExpiredCookie, async (req, res) => {
+router.put('/:id', handleExpiredCookie, async (req, res) => {
     try {
-        const blogData = await Blog.update({
-            ...req.body,
-            user_id: req.session.user_id,
-        });
+        const blogData = await Blog.update(
+            {...req.body},
+            {
+                where: {
+                    id: req.params.id,
+                    user_id: req.session.user_id,
+                }
+            }
+        )
         // If the blog was successfully updated, the new response will be returned as json.
         // 200 status code means the request is successful.
         console.log(blogData);
