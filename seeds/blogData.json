@@ -1,18 +1,18 @@
 [
     {
-        "title": "Initial Blog Post",
-        "content": "Initial Blog Post content"
+        "title": "Model View Controller (MVC)",
+        "content": "A pattern in software design commonly used to implement user interfaces, data, and controlling logic."
     },
     {
-        "title": "2nd Blog Post",
-        "content": "2nd Blog Post content"
+        "title": "Object-relational Mapping (ORM)",
+        "content": "A technique used in creating a 'bridge' between object-oriented programs, and in most cases, relational databases."
     },
     {
-        "title": "3rd Blog Post",
-        "content": "3rd Blog Post content"
+        "title": "Structured Query Language (SQL)",
+        "content": "A domain-specific language used to manage data, especially in a relational database management sytem."
     },
     {
-        "title": "4th Blog Post",
-        "content": "4th Blog Post content"
+        "title": "Express.js",
+        "content": "A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications."
     }    
 ]
