@@ -8,8 +8,11 @@ const commentData = require('./commentData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
+  // bulkCreate creates and inserts multiple instances in bulk
   const users = await User.bulkCreate(userData, {
+    // BulkCreate hooks will still be run if options.hooks is true
     individualHooks: true,
+    // Return all columns for the affected rows
     returning: true,
   });
 
@@ -31,4 +34,5 @@ const seedDatabase = async () => {
   process.exit(0);
 };
 
+// Seeds the database to index.js
 seedDatabase();

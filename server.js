@@ -63,5 +63,5 @@ app.use(routes);
 // Sync sequelize models to the database, then turn on the server
 // listen() method is responsible for listening for incoming connections on the specified port
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening at Port 3001'));
+  app.listen(PORT, () => console.log(`tech wire app listening at http://localhost:${PORT}`));
 });

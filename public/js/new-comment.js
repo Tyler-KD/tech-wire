@@ -7,7 +7,11 @@ const newCommentFormHandler = async (event) => {
     // window.location.pathname returns the path and filename of the current page
     // .split('/') splits ["http://localhost:3001/blog/1"] into ["http://localhost:3001", "blog", "1"] based on the delimiter (/)
     // .pop() removes the last element from an array and returns it
-    const blog_id = parseInt(window.location.pathname.split('/').pop());
+    //const blog_id = parseInt(window.location.pathname.split('/').pop());
+    // The read-only target property of the Event interface is a reference to the object onto which the event was dispatched.
+    // The getAttribute() method of the Element interface returns the value of a specified attribute on the element.
+    const blog_id = event.target.getAttribute("data-id");
+    console.log(event.target)
 
     if (comment_input) {
         // Send a POST request to the API endpoint

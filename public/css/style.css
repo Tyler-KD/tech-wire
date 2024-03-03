@@ -17,3 +17,22 @@ header,
   color: #065b83;
   text-decoration: underline;
 }
+
+body {
+  background-color: rgb(12 34 47);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.card {
+  background-color: #1b89bc;
+  color: ghostwhite;
+}
+
+h2 {
+  color: #1b89bc;
+}
+
+.container.container-fluid {
+  color: #1b89bc;
+  color: ghostwhite;
+}

@@ -7,4 +7,5 @@ router.use('/users', userRoutes);
 router.use('/blogs', blogRoutes);
 router.use('/comments', commentRoutes);
 
+// Exports userRoutes, blogRoutes, and commentRoutes
 module.exports = router;

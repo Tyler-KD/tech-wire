@@ -1,6 +1,7 @@
 <div class="text-center">
-  {{!-- Blog title --}}
+   {{!-- Blog title --}}
   <h2>{{title}}</h2>
+  <div class="card"> 
   {{!-- get_emoji from helpers --}}
   <p>{{{get_emoji}}}</p>
   {{!-- Blog content --}}
@@ -8,10 +9,11 @@
   {{!-- Displays who created the blog and date created --}}
   <p>Created by {{user.username}} on {{format_date date_created}}</p>
   {{!-- Built-in helper to display new comment form if logged in --}}
+  </div>
   {{#if logged_in}}
   {{!-- Form for adding new comment --}}
-  <form class="form new-comment-form" class="my-5">
-    <div class="my-5">
+  <form data-id={{id}} class="form new-comment-form" class="my-5">
+    <div class="card" class="my-5">
       <label for="textarea-comment" class="comment-label-text">Add a comment:</label>
       <!-- Textarea input for user to submit new comment -->
       <textarea
@@ -31,7 +33,7 @@
   {{!-- Loop over each object in the comments array --}}
   {{!-- For each object in the comments array, the following <div> will be rendered --}}
   {{#each comments}}
-  <div class="comment my-5">
+  <div class="card" class="comment my-5">
     <p>{{comment_input}}</p>
     <p>By {{user.username}} on {{format_date date_created}}</p>
   </div>
