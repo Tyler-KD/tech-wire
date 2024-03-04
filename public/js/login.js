@@ -18,7 +18,7 @@ const loginFormHandler = async (event) => {
             // If successful, redirect the browser to the dashboard page
             document.location.replace('/dashboard');
         } else {
-            alert(response.statusText);
+            alert('Failed to enter a valid username and password');
         }
     }
 };
@@ -42,7 +42,7 @@ const signupFormHandler = async (event) => {
             // If successful, redirect the browser to the dashboard page
             document.location.replace('/dashboard');
         } else {
-            alert(response.statusText);
+            alert('Failed to enter a username and password with at least 8 characters');
         }
     }
 };

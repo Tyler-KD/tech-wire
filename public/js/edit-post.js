@@ -39,7 +39,7 @@ const delButtonHandler = async (event) => {
         // If response is successful, redirect the browser to the dashboard page after clicking 'DELETE'
         if (response.status < 400) {
             console.log(response);
-            // document.location.replace('/dashboard');
+            document.location.replace('/dashboard');
         // If the response is unsuccessful, navigate back to the login route
         } else {
             alert('Failed to delete blog');
@@ -50,11 +50,11 @@ const delButtonHandler = async (event) => {
 
 // Event listener for creating a user's blog after clicking 'Update'
 document
-    .querySelector('.new-blog-form')?.addEventListener('submit', upFormHandler);
-    // Event listener for deleting a user's blog after clicking 'DELETE'
+    .querySelector('.update-form').addEventListener('click', upFormHandler);
+// Event listener for deleting a user's blog after clicking 'DELETE'
 // The optional chaining (?.) operator accesses an object's property or calls a function.
 // If the object accessed or function called using this operator is undefined or null, the expression short circuits
 // and evaluates to undefined instead of throwing an error.
 // When deleting a blog, "TypeError: Cannot read properties of null" will not display since 'DELETE' button is no longer rendered.
 document
-.querySelector('.blog-list')?.addEventListener('click', delButtonHandler);
+.querySelector('.blog-form')?.addEventListener('click', delButtonHandler);
