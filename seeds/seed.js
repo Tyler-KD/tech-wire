@@ -7,7 +7,8 @@ const commentData = require('./commentData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
-
+  
+  // Pass through User
   // bulkCreate creates and inserts multiple instances in bulk
   const users = await User.bulkCreate(userData, {
     // BulkCreate hooks will still be run if options.hooks is true
@@ -16,6 +17,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+  // Pass through Blog
   const blogs = await Blog.bulkCreate(blogData.map(blog => ({
     ...blog,
     user_id: users[Math.floor(Math.random() * users.length)].id,
