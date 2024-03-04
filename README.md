@@ -29,13 +29,33 @@ To run this application from the terminal, enter "npm start" to start the server
 
 For running this application within Heroku, open the deployed application URL and follow previous instructions from the homepage.
 
+**Attached is a screenshot of the Homepage:**
+
+![Homepage](/public/images/Tech%20Wire%20Homepage.png)
+
+**Attached is a screenshot of the Login:**
+
+![Login](/public/images/Tech%20Wire%20Login.png)
+
+**Attached is a screenshot of the Dashboard:**
+
+![Dashboard](/public/images/Tech%20Wire%20Dashboard.png)
+
+**Attached is a screenshot of a Blog:**
+
+![Blog](/public/images/Tech%20Wire%20Blog.png)
+
+**Attached is a screenshot of the Edit Blog page:**
+
+![Edit Blog page](/public/images/Tech%20Wire%20Edit%20Blog.png)
+
 ## Video
 
 N/A
 
 ## Deployed Site
 
-
+[Tech Wire](https://tech-wire-3efc7fd046fa.herokuapp.com/)
 
 ## Credits
 

@@ -48,14 +48,13 @@ const delButtonHandler = async (event) => {
     }
 };
 
-// Event listener for deleting a user's blog after clicking 'DELETE'
+// Event listener for creating a user's blog after clicking 'Update'
+document
+    .querySelector('.new-blog-form')?.addEventListener('submit', upFormHandler);
+    // Event listener for deleting a user's blog after clicking 'DELETE'
 // The optional chaining (?.) operator accesses an object's property or calls a function.
 // If the object accessed or function called using this operator is undefined or null, the expression short circuits
 // and evaluates to undefined instead of throwing an error.
 // When deleting a blog, "TypeError: Cannot read properties of null" will not display since 'DELETE' button is no longer rendered.
 document
-    .querySelector('.blog-list')?.addEventListener('click', delButtonHandler);
-// Event listener for creating a user's blog after clicking 'Update'
-document
-    .querySelector('.new-blog-form')
-    .addEventListener('submit', upFormHandler);
+.querySelector('.blog-list')?.addEventListener('click', delButtonHandler);
