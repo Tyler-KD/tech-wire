@@ -27,7 +27,7 @@ const sess = {
   // It holds the secret key for session
   secret: 'Super secret secret',
   cookie: {
-    maxAge: 15000,
+    maxAge: 300000,
     httpOnly: true,
     secure: false,
     sameSite: 'strict',
